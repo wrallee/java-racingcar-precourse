@@ -7,7 +7,7 @@
 * [과제 제출 방법](https://github.com/next-step/nextstep-docs/tree/master/precourse)
 
 ## 기능 목록
-- [ ] 자동차 이름을 입력받는다.
+- [X] 자동차 이름을 입력받는다.
   - [X] 자동차 이름 길이 확인
   - [ ] 자동차 이름 중복 확인
 - [ ] 0~9 사이의 랜덤 값을 생성한다.
