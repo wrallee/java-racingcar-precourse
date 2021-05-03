@@ -1,3 +1,7 @@
+package car;
+
+import info.Score;
+
 public class Car {
 
 	private final Name name;

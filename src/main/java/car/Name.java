@@ -1,3 +1,5 @@
+package car;
+
 public class Name {
 
 	public static final int MIN_LENGTH = 1;

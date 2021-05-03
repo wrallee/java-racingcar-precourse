@@ -1,3 +1,5 @@
+package info;
+
 public class Score {
 
 	public static final int BOUND_LIMIT = 10;
@@ -6,7 +8,7 @@ public class Score {
 
 	private final int value;
 
-	Score(int value) {
+	public Score(int value) {
 		checkScore(value);
 		this.value = value;
 	}

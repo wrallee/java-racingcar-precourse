@@ -1,3 +1,7 @@
+package car;
+
+import info.Score;
+
 public class Position {
 
 	public static final int CRITICAL_VALUE = 4;

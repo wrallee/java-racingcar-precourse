@@ -1,12 +1,7 @@
-import java.math.BigInteger;
-import java.util.Arrays;
+package car;
+
 import java.util.HashMap;
 import java.util.Map;
-
-import com.sun.tools.javac.util.ArrayUtils;
-import com.sun.tools.javac.util.StringUtils;
-
-import sun.security.util.ArrayUtil;
 
 public class Cars {
 
