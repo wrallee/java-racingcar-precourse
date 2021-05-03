@@ -27,6 +27,6 @@ public class CarTest {
 
 	    car.move(score);
 
-	    assertThat(car.getLocation()).isEqualTo(expectedValue);
+	    assertThat(car.getDistance()).isEqualTo(expectedValue);
 	}
 }

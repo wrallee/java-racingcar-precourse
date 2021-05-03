@@ -2,37 +2,31 @@ package car;
 
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Map;
+import java.util.List;
 
 import info.Score;
 
 public class Cars {
 
-	private final Map<Name, Car> map;
+	private final List<Car> list;
 
 	public Cars(Names names) {
-		map = names.toCarsMap();
+		list = names.toCarList();
 	}
 
 	public void timeSpend() {
-		map.forEach((name, car) -> {
-			car.move(new Score());
-		});
+		list.forEach((car) -> car.move(new Score()));
 	}
 
 	public void printTrack() {
-		map.forEach((name, car) -> {
-			car.printRoute();
-		});
+		list.forEach((car) -> car.printRoute());
 	}
 
 	public void printWinners() {
 		// TODO 승리자 출력기능 구현 필요
 	}
 
-	public int getMaxValue() {
-		return Collections.max(map.entrySet(), Comparator.comparingInt(o -> o.getValue().getLocation()))
-			.getValue()
-			.getLocation();
+	int getMaxValue() {
+		return Collections.max(list, Comparator.comparingInt(Car::getDistance)).getDistance();
 	}
 }

@@ -4,8 +4,8 @@ import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -34,22 +34,18 @@ public class CarsTest {
 
 	@ParameterizedTest
 	@CsvSource(value = {"1:1:1:1", "1:5:5:5", "1:8:2:8"}, delimiter = ':')
-	public void 최대값_추출_테스트(int r1, int r2, int r3, int expectedResult) throws Exception {
-		Car car1 = mock(Car.class);
-		Car car2 = mock(Car.class);
-		Car car3 = mock(Car.class);
-		Map<Name, Car> map = new HashMap<Name, Car>() {{
-			put(Name.from("1"), car1);
-			put(Name.from("2"), car2);
-			put(Name.from("3"), car3);
-		}};
+	public void 최대값_추출_테스트(int r0, int r1, int r2, int expectedResult) throws Exception {
+		List<Car> list = new ArrayList<>();
+		list.add(mock(Car.class));
+		list.add(mock(Car.class));
+		list.add(mock(Car.class));
 
 		Names mockNames = mock(Names.class);
-		doReturn(map).when(mockNames).toCarsMap();
+		doReturn(list).when(mockNames).toCarList();
 
-		doReturn(r1).when(car1).getLocation();
-		doReturn(r2).when(car2).getLocation();
-		doReturn(r3).when(car3).getLocation();
+		doReturn(r0).when(list.get(0)).getDistance();
+		doReturn(r1).when(list.get(1)).getDistance();
+		doReturn(r2).when(list.get(2)).getDistance();
 
 		Cars cars = new Cars(mockNames);
 

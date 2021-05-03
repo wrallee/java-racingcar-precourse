@@ -1,8 +1,8 @@
 package car;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Map;
+import java.util.List;
 import java.util.Set;
 
 public class Names {
@@ -25,11 +25,11 @@ public class Names {
 		}
 	}
 
-	public Map<Name, Car> toCarsMap() {
-		Map<Name, Car> map = new HashMap<>();
+	public List<Car> toCarList() {
+		List<Car> map = new ArrayList<>();
 
 		names.forEach(name -> {
-			map.put(name, new Car(name));
+			map.add(new Car(name));
 		});
 
 		return map;
