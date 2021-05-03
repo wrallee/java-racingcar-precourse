@@ -9,6 +9,7 @@ repositories {
 }
 
 dependencies {
+    testImplementation('org.mockito:mockito-all:1.10.19')
     testCompile('org.junit.jupiter:junit-jupiter:5.7.1')
     testCompile('org.assertj:assertj-core:3.19.0')
 }

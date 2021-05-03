@@ -1,5 +1,7 @@
 package car;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Map;
 
 import info.Score;
@@ -26,5 +28,11 @@ public class Cars {
 
 	public void printWinners() {
 		// TODO 승리자 출력기능 구현 필요
+	}
+
+	public int getMaxValue() {
+		return Collections.max(map.entrySet(), Comparator.comparingInt(o -> o.getValue().getLocation()))
+			.getValue()
+			.getLocation();
 	}
 }
