@@ -8,6 +8,14 @@ public class Car {
 		this.position = new Position();
 	}
 
+	public int getLocation() {
+		return position.getValue();
+	}
+
+	public void move(Score score) {
+		position.increaseWithScore(score);
+	}
+
 	public void printRoute() {
 		System.out.println(name + " : " + position.getRouteString());
 	}
