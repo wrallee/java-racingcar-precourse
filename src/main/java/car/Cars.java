@@ -23,7 +23,24 @@ public class Cars {
 	}
 
 	public void printWinners() {
-		// TODO 승리자 출력기능 구현 필요
+		StringBuilder builder = new StringBuilder();
+		int maxValue = getMaxValue();
+
+		for (Car car : list) {
+			builder.append(appendWinner(car, maxValue));
+		}
+
+		String result = builder.substring(0, builder.lastIndexOf(", "));
+
+		System.out.println(result + "가 최종 우승했습니다.");
+	}
+
+	public String appendWinner(Car car, int maxValue) {
+		if (car.getDistance() == maxValue) {
+			return car.getCarName() + ", ";
+		}
+
+		return "";
 	}
 
 	int getMaxValue() {

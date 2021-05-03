@@ -18,7 +18,7 @@ public class Names {
 
 		names = new HashSet<>();
 		for (String nameValue : nameArray) {
-			Name name = Name.from(nameValue);
+			Name name = Name.from(nameValue.trim());
 			checkDuplicate(names, name);
 
 			names.add(name);

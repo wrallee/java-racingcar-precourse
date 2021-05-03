@@ -31,6 +31,7 @@ public class Display {
 		}
 
 		cars.printTrack();
+		System.out.println();
 		cars.printWinners();
 	}
 }

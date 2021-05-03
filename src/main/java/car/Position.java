@@ -28,12 +28,12 @@ public class Position {
 	}
 
 	public String getRouteString() {
-		String result = "";
+		StringBuilder result = new StringBuilder();
 
 		for (int i = 0; i < value; i++) {
-			result += "-";
+			result.append("-");
 		}
 
-		return result;
+		return result.toString();
 	}
 }
