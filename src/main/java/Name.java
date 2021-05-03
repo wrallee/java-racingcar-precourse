@@ -1,5 +1,8 @@
 public class Name {
 
+	public static final int MIN_LENGTH = 1;
+	public static final int MAX_LENGTH = 5;
+
 	String value;
 
 	Name(String value) {
@@ -12,7 +15,7 @@ public class Name {
 	}
 
 	private static void checkLength(String value) {
-		if (value == null || value.length() < 1 || 5 < value.length()) {
+		if (value == null || value.length() < MIN_LENGTH || MAX_LENGTH < value.length()) {
 			throw new IllegalArgumentException("이름은 1~5 길이의 문자열로 구성되어야 합니다.");
 		}
 	}
