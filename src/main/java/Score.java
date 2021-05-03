@@ -6,13 +6,17 @@ public class Score {
 
 	private int value;
 
+	Score(int value) {
+		checkScore(value);
+		this.value = value;
+	}
+
 	public Score() {
 		this((int)(Math.random() * BOUND_LIMIT));
 	}
 
-	public Score(int value) {
-		checkScore(value);
-		this.value = value;
+	public boolean isBiggerOrEqualsThan(int target) {
+		return this.value >= target;
 	}
 
 	private static void checkScore(int value) {
