@@ -19,4 +19,9 @@ public class Name {
 			throw new IllegalArgumentException("이름은 1~5 길이의 문자열로 구성되어야 합니다.");
 		}
 	}
+
+	@Override
+	public String toString() {
+		return value;
+	}
 }
