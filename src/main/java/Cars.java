@@ -1,9 +1,17 @@
+import java.math.BigInteger;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+
+import com.sun.tools.javac.util.ArrayUtils;
+import com.sun.tools.javac.util.StringUtils;
+
+import sun.security.util.ArrayUtil;
 
 public class Cars {
 
 	public static final String DELIMITER = ",";
+	public static final int ZERO = 0;
 
 	private final Map<String, Car> map;
 
@@ -13,14 +21,24 @@ public class Cars {
 
 		checkInput(carNames);
 		for (String name : carNames) {
-			Car car = new Car(Name.from(name));
-			map.putIfAbsent(name, car);
+			checkDuplicate(map, name);
+			map.put(name, new Car(Name.from(name)));
 		}
 	}
 
 	private static void checkInput(String[] carNames) {
-		if (carNames == null || carNames.length == 0) {
+		if (isEmpty(carNames)) {
 			throw new IllegalArgumentException("적절하지 않은 입력값입니다.");
 		}
+	}
+
+	private static void checkDuplicate(Map<String, Car> map, String name) {
+		if (map.containsKey(name)) {
+			throw new IllegalArgumentException("입력값이 중복되었습니다.");
+		}
+	}
+
+	private static boolean isEmpty(String[] carNames) {
+		return carNames == null || carNames.length == ZERO;
 	}
 }
