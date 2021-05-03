@@ -4,7 +4,7 @@ public class Score {
 	public static final int MIN_SCORE = 0;
 	public static final int MAX_SCORE = 9;
 
-	private int value;
+	private final int value;
 
 	Score(int value) {
 		checkScore(value);

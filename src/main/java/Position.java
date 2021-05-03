@@ -19,7 +19,7 @@ public class Position {
 		}
 	}
 
-	void increase() {
+	private void increase() {
 		this.value += 1;
 	}
 

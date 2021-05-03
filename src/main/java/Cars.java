@@ -5,7 +5,7 @@ public class Cars {
 
 	public static final String DELIMITER = ",";
 
-	Map<String, Car> map;
+	private final Map<String, Car> map;
 
 	public Cars(String input) {
 		map = new HashMap<>();

@@ -3,7 +3,7 @@ public class Name {
 	public static final int MIN_LENGTH = 1;
 	public static final int MAX_LENGTH = 5;
 
-	String value;
+	private final String value;
 
 	Name(String value) {
 		checkLength(value);
